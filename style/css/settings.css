@@ -1,0 +1,91 @@
+:root {
+  --body-margin: 8px;
+  --header-height: 5em;
+  --footer-height: 0;
+}
+
+header {
+  height: var(--header-height);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*justify-content: space-between;*/
+  gap: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* Sidebar, die bei offenem Menü dargestellt werden soll */
+aside {
+  --width: 100%;
+
+  display: grid;
+  gap: var(--body-margin);
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  height: 50px;
+  width: var(--width);
+}
+
+a:hover{
+  background: darkgray;
+}
+
+
+aside>a {
+  background-color: #EBEAEA;
+  line-height: 47px;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+/* checkbox zum öffnen und schließen */
+#aside-trigger {
+  display: none;
+}
+
+/* wenn checkbox checked, dann öffne */
+#aside-trigger:checked+aside {
+  display: none;
+}
+
+.settings {
+  /* Burger-Menu Size Scale */
+  font-size: inherit;
+  /* 10px, 10em, 50px ... the entire button adjusts to its font size. */
+
+  /* Button */
+  --height: 2em;
+  --border-radius: .3em;
+  --border-width: .1em;
+  --border-color: #88DCEE;
+  --border-color-hover: #48a5ba;
+  /*--border-color-click: rgb(52, 52, 52);*/
+  /*--background-color: #EBEAEA;*/
+
+  height: var(--height);
+  aspect-ratio: 1/1;
+  background-color: var(--background-color);
+  background-image: url(../icons/burgermenu.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings:hover {
+  cursor: pointer;
+  background-color: var(--border-color-hover);
+}
+
+.settings:active {
+  background-color: var(--border-color-click);
+}

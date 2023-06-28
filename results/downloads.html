@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="../style/css/main.css"
+    >
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../style/css/toggle.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/settings.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/results.css"
+  >
+
+  <script src="plotly-2.24.1.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+  <header>
+    <a href="../overview/overview.html"><img id="back_arrow" src="../style/icons/linker-pfeil.png"></a>
+    <h1>HonestExtension</h1>
+  </header>
+
+
+
+<h1>Data we obtained using the downloads permission</h1>
+<p> Here is the information we could gather about your downloads. We could gather the URL from which you did download a resource, and the filenames where you stored them,
+note that we can NOT see the content of the files.   </p>
+
+
+
+
+<h2> The information we could gather about your downloads   </h2>
+<table id="download_table" >
+  <tr>
+    <th>Number</th>
+    <th>Filename</th>
+    <th>Url</th>
+    <th>Date</th>
+  </tr>
+</table>
+</body>
+<script src="util.js"></script>
+<script src="download.js" id="history" parameter="tabsHistory" ></script>
+
+
+</html>

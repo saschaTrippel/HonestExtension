@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../style/css/main.css"
+    >
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../style/css/toggle.css"
+    >
+    <link
+      rel="stylesheet"
+      href="../style/css/settings.css"
+    >
+  </head>
+  <body>
+    <header>
+      <label
+        for="aside-trigger"
+        class="settings"
+      ></label>
+	  <h1>HonestExtension</h1>
+    </header>
+
+    <input
+      type="checkbox"
+      id="aside-trigger"
+    >
+    <aside>
+      <a href="#" id="delete-button"/>Delete personal data</a>
+      <a href="../overview/explanation.html">Explanation</a>
+	  <a href="../overview/impressum.html">Impressum</a>
+    </aside>
+
+    <main id="main">
+      <br>
+      <fieldset>
+        <legend><b>Start tracking:</b></legend>
+        <table style="line-height: 2;">
+          <th width="430px"></th>
+          <th width="50"></th>
+          <th width="20px"></th>
+          <tr>
+            <td>Collect data:</td>
+            <td>
+              <label class="switch">
+                <input
+                  class="checkPermission"
+                  type="checkbox"
+                  id="activeToggle"
+                >
+                <span class="slider round" id="main-slider"></span>
+              </label>
+            </td>
+            <td style="text-align: center;">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <br>
+      <div>
+			<fieldset >
+				<legend><b>Permissions to Simulate:</b></legend>
+				<table class="firstLine" style="line-height: 2;">
+					<th width="430px"></th>
+					<th width="50"></th>
+					<th width="20px"></th>
+					<tr>
+						<td data-content2="The extension can access data of websites you visit. This includes data about the website as well as data you enter into the webiste.">
+							Access your data for all websites:<br>
+						</td>
+						<td>
+							<label class="toggle">
+								<input id="1" class="checkPermission" type="checkbox" checked="false" data-type="<all_urls>"/>
+								<span class="slider round"></span>
+							</label>
+						</td>
+						<td style="text-align: center;">
+							<a href="../results/all_url.html"><img src="../style/icons/right_arrow.png" width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can read data about you bookmars, as well es create, modify, and delete bookmarks.">
+							Read and modify bookmarks:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="2" class="checkPermission" type="checkbox" checked="false" data-type="bookmarks"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/bookmarks.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can see details about you recent downloads.">
+							Download files and history:<br>
+						</td>
+						<!-- Download files and read and modify the browser’s download history -->
+						<td>
+						<label class="toggle">
+							<input id="3" class="checkPermission" type="checkbox" checked="false" data-type="downloads"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/downloads.html"><img src="../style/icons/right_arrow.png" width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can see your location. Depending on your device this can be more or less acturate.">
+							Access your location:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="4" class="checkPermission" type="checkbox" checked="false" data-type="geolocation"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/location.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can access details about you opend tabs and can modify them.">
+							Access browser tabs:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="5" class="checkPermission" type="checkbox" checked="false" data-type="tabs"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/tabsHistory.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can see the steps your browser takes to navigate from one page to another.">
+							Access browser activity during navigation:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="6" class="checkPermission" type="checkbox" checked="false" data-type="webNavigation"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/webNavigationHistory.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can get information about you installed browser extensions and themes.">
+							Monitor extension usage and manage themes:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="7" class="checkPermission" type="checkbox" checked="false" data-type="management"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/extension.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can see what you copy into your system clipboard.">
+							Access the content of your Clipboard:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="7" class="checkPermission" type="checkbox" checked="false" data-type="clipboardRead"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/clipboard.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			<fieldset >
+				<legend><b>Hidden permissions:</b></legend>
+				<!--Hidden permissions in browser extensions refer to permissions that are not explicitly disclosed to users during the installation or review process.-->
+				<table class="firstLine" style="line-height: 2;">
+					<th width="430px"></th>
+					<th width="50"></th>
+					<th width="20px"></th>
+					<tr>
+						<td data-content2="The extension has special access to a tab while you are using it. It can see details about the tab and can modiy pages in that tab. This is a hidden permission, meaning that you cannot see if a extension has this permission on its store page.">
+							ActiveTab:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="7" class="checkPermission" type="checkbox" checked="false" data-type="activeTab"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/activeTab.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can see what pages your browser plans to access. This is a hidden permission, meaning that you cannot see if a extension has this permission on its store page.">
+							WebRequest:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="7" class="checkPermission" type="checkbox" checked="false" data-type="webRequest"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/webRequestHistory.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+					<tr>
+						<td data-content2="The extension can access the cookies stored in your browser. This is a hidden permission, meaning that you cannot see if a extension has this permission on its store page.">
+							Cookies:<br>
+						</td>
+						<td>
+						<label class="toggle">
+							<input id="7" class="checkPermission" type="checkbox" checked="false" data-type="cookies"/>
+							<span class="slider round"></span>
+						</label>
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/cookies.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			<fieldset >
+				<legend><b>Knowing without any permission:</b></legend>
+				<table class="firstLine" style="line-height: 2;">
+					<th width="430px"></th>
+					<th width="50"></th>
+					<th width="20px"></th>
+					<tr>
+						<td data-content2="Some information can also be obtained without the extension asking for a permission. This information is listed here.">
+							General data:<br>
+						</td>
+						<td>
+						
+						</td>
+						<td style="text-align: center;">
+						<a href="../results/language.html"><img src="../style/icons/right_arrow.png"  width="18" height="18" style="vertical-align: middle;"></a>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+
+		<div>
+			Select an extension to simulate:
+			<select id="extension-selection">
+				<option label="Custom">Custom</option>
+				<optgroup label="Top extensions">
+					<option label="uBlockOrigin">uBlockOrigin</option>
+					<option label="AdBlocker Ultimate">adBlockerUltimate</option>
+					<option label="Honey">honey</option>
+					<option label="Easy Screenshot">easyScreenshot</option>
+					<option label="To Google Translate">toGoogleTranslate</option>
+				</optgroup>
+				<optgroup label ="Installed extensions" id="extension-selection-installed">
+				</optgroup>>
+			</select>
+		</div>
+  
+
+      <div class='analysis'>
+        <!-- Link to analysis page -->
+        <a href="../analysis/analysis.html">Show collected data</a>
+      </div>
+    </main>
+
+    <script src="overview.js"></script>
+    <script src="presets.js"></script>
+		<script src="options.js"></script>
+  </body>
+</html>

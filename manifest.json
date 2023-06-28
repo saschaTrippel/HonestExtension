@@ -1,0 +1,61 @@
+{
+	// Mandatory fields
+	"manifest_version": 2,
+	"name": "Honest Extension",
+	"version": "0.1",
+
+	"description": "This description should really be more helpful 4/10 would not recommend!",
+
+	"permissions": [
+		// Required for extension to work
+		"storage",	// store settings, active, and personal data
+		"scripting",	// inject content scripts
+		"<all_urls>",	// inject content scripts
+		// Required for tracking
+		"bookmarks",
+		"clipboardRead",
+		"downloads",
+		"geolocation",
+		"tabs",
+		"webNavigation",
+		"webRequest",
+		"management",
+		"cookies"
+	],
+
+	// Adds toolbar button
+	"browser_action": {
+		"default_icon": "style/icons/beasts-32.png", // TODO replace
+		"default_title": "Honest Extension",
+		"default_popup": "overview/overview.html"
+	},
+
+	// Options page, can be displayed through extension settings
+	"options_ui": {
+		"page": "settings/settings.html",
+		"browser_style": true
+	},
+
+	// Background scripts that are executed when extension is started
+	"background": {
+		"scripts": [
+			// Manage extension
+			"background/setup.js", "background/handleTracker.js",
+			// Trackers
+			"background/bookmark-tracker.js",
+			"background/clipboard-tracker.js",
+			"background/downloads-tracker.js",
+			"background/geolocation-tracker.js",
+			"background/tabs-tracker.js",
+			"background/webNavigation-tracker.js",
+			"background/webRequest-tracker.js",
+			"background/extension-tracker.js",
+			"background/cookies-tracker.js"
+		]
+	},
+
+	"web_accessible_resources": [
+		"style/main.css",
+		"style/options.css"
+	  ]
+}

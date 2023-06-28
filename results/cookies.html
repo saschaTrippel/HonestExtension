@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="../style/css/main.css"
+    >
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../style/css/toggle.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/settings.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/results.css"
+  >
+
+  <script src="plotly-2.24.1.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+  <header>
+    <a href="../overview/overview.html"><img id="back_arrow" src="../style/icons/linker-pfeil.png"></a>
+    <h1>HonestExtension</h1>
+  </header>
+
+
+
+
+<h1>Data we obtained about your cookies</h1>
+<p> Here we present information about your cookies that we have obtained. To obtain the data we used the cookies permission and the all_urls permission.
+  These include all cookies sent by your browser and their content. Some 
+  cookies may contain no sensetive data, while others may contain sensitive data about you, which allows others to impersonate you in the given domain.
+</p>
+<h2>Important metrics we gathered</h2>
+<p id="total" ></p>
+<p id="unique" ></p> 
+<h2> For these 5 domains we could obtain the most cookies </h2>
+<div id="myDiv"></div>
+<p id="unique" ></p>  
+
+
+<h2> We present a selection of 40 random cookies we have obtained while you were browsing  </h2>
+<table id="cookie_table" >
+  <tr>
+    <th>Number</th>
+    <th>Domain</th>
+    <th>Cookie Value</th>
+  </tr>
+</table>
+</body>
+<script src="util.js"></script>
+<script src="cookies.js" id="history" parameter="tabsHistory" ></script>
+
+</html>

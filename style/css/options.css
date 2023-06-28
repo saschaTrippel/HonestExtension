@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+  }
+  
+  main {
+    padding: .25em;
+    box-sizing: border-box;
+  }
+  
+  .element-list div {
+    margin-top: 1em;
+  }
+  
+  .element-list div,
+  .element-list div label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+
+  table.firstLine td:first-child {
+    font-size: 18px;
+    background-color: #EBEAEA;
+  }

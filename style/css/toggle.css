@@ -1,0 +1,67 @@
+
+div {
+  line-height: 2;
+}
+.divlabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .label-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .checkPermission {
+    display: none;
+  }
+  
+  .slider {
+    position: relative;
+    margin-top: 2px;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+    float: right;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    /*float: right;*/
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+
+
+  input:checked + .slider {
+    background-color: #EE9A88;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  .inactive{
+    background-color: #ccc !important;
+  }
+  input:checked + .inactive{
+    background-color: black !important;
+  }
+
+  table{
+    border-collapse: collapse;
+}
+.firstLine td{
+    border-bottom: 2px solid black;
+}

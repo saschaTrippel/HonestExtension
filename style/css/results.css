@@ -1,0 +1,50 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+#back_arrow {
+    /* Button */
+    --height: 2em;
+    --border-radius: .3em;
+    --border-width: .1em;
+    --border-color: #88DCEE;
+    --border-color-hover: #48a5ba;
+    /*--border-color-click: rgb(52, 52, 52);*/
+    /*--background-color: #EBEAEA;*/
+  
+    height: var(--height);
+    aspect-ratio: 1/1;
+    background: #88DCEE;
+    border: none;
+    background-image: url(../icons/linker-pfeil.png);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#back_arrow:hover {
+  --border-color-hover: #48a5ba;
+  cursor: pointer;
+  background-color: var(--border-color-hover);
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="../style/css/main.css"
+    >
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../style/css/toggle.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/settings.css"
+  >
+  <link
+    rel="stylesheet"
+    href="../style/css/results.css"
+  >
+
+  <script src="plotly-2.24.1.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+  <header>
+    <a href="../overview/overview.html"><img id="back_arrow" src="../style/icons/linker-pfeil.png"></a>
+    <h1>HonestExtension</h1>
+  </header>
+
+
+<h1>Data we obtained using the clipboard permission</h1>
+<p> With the clipboard permission we can read the content of your system clipboard. Even if you are not using it to interact with your browser.  
+We do not save any of the data we read, as it may contain highly sensitive information like passwords. Instead we only display the quantity of different items we read from your clipboard.
+
+<p id="total" ></p>
+
+</body>
+<script src="util.js"></script>
+<script src="clipboard.js"></script>
+
+
+
+</html>
