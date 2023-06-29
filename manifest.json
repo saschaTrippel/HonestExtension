@@ -2,7 +2,7 @@
 	// Mandatory fields
 	"manifest_version": 2,
 	"name": "Honest Extension",
-	"version": "0.1",
+	"version": "0.4",
 
 	"description": "This description should really be more helpful 4/10 would not recommend!",
 
