@@ -1,12 +1,18 @@
-async function down(){
+/**
+ * Inserts content into bookmarkspage
+ */
+async function bookmarks_table(){
     var downloads =[]
     try {
         var downloads = await getHistory("bookmarks")
     } catch (error) {
-        if(error.message = "upsi"){
+        if(error.message = "SourceError"){
             return
          }
     }
+    /**
+    * Helper function requiered for createTable
+    */
     function content (element,i,Table){
         if(i==0){
             return Table.rows.length-1;
@@ -30,4 +36,4 @@ async function down(){
 }
 
 
-down()
+bookmarks_table()

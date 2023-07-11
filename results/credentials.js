@@ -1,4 +1,9 @@
-
+/**
+ * Creates a piichart with two parts
+ *
+ * @param {Number}  Succesfull first part
+ * @param {Number} Failure second part
+ */
 function setPIIchart(Succesfull, Failure){
     var data = [{
 
@@ -22,14 +27,16 @@ function setPIIchart(Succesfull, Failure){
     Plotly.newPlot('barChart', data, layout);
 }
 
-
+/**
+ * Creates content of HTML page for credentials
+ */
 async function bar(){
     var credentials =[]
     try {
     credentials = await getCredentials()
     document.getElementById("Credentials").hidden = false
     } catch (error) {
-        if(error.message = "upsi"){
+        if(error.message = "SourceError"){
             return
         }
         else{
@@ -41,6 +48,9 @@ async function bar(){
     Succesfull = credentials.reduce(countPassword,0)
     Failure = credentials.length - Succesfull
     setPIIchart(Succesfull,Failure)
+    /**
+    * helper function used for reduce
+    */
     function countPassword(accumulator,currentValue,currentIndex,array){//counts how many passwords we could get
         if(currentValue.password){
             return accumulator + 1
@@ -52,13 +62,19 @@ async function bar(){
     document.getElementById("all_cred").innerHTML = "Out of "+ credentials.length  + " Loginforms you used." ;
     document.getElementById("suc_cred").innerHTML = "We could succesfully extract "+  Succesfull + " passwords." ;
 }
+/**
+ * Gets conntent of credentials storage and remove duplicates from it
+ */
 async function getCredentials(){
     var credentials = await getHistory("credentials")
     credentials = removeDuplicates(credentials,eq)        
     return credentials
 
 }
-
+/**
+ * returns true if two elements of storrage are identicall for our purpose
+ * @param {any}  element the element which is compared against this 
+ */
 function eq(element, index, array){
     if(this.hostname == element.hostname && this.username == element.username && element.password == this.password ){
         return true
@@ -67,13 +83,16 @@ function eq(element, index, array){
         return false
     }
 }
+/**
+ * creates the Table holding the credentials
+ */
 async function credentialsTable(){
     var credentials
     try {
         credentials = await getCredentials()
         document.getElementById("Credentials").hidden = false
     } catch (error) {
-        if(error.message = "upsi"){
+        if(error.message = "SourceError"){
             return
         }
         else{
@@ -95,6 +114,9 @@ async function credentialsTable(){
             password.push(element)
         }
     }
+    /**
+    * Helper function requiered for createTable
+    */
     function content(element,i,Table){
         if(i==0){
             return Table.rows.length-1

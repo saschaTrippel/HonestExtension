@@ -1,4 +1,11 @@
-async function createDiagramm(tag, title, xaxis, yaxis ){ //creates the barchart
+/**
+ * creats a barchart
+ * @param {string} tag the html tag at which the diagramm is appended
+ * @param {string} title the title of the new diagramm
+ * @param {array} xaxis array with the values for the x axis
+ * @param {array} yaxis array with the values for the y axis
+ */
+async function createDiagramm(tag, title, xaxis, yaxis ){ 
     xaxis = xaxis.slice(0,5)
     yaxis = yaxis.slice(0,5)
     var data = [
@@ -35,6 +42,11 @@ async function createDiagramm(tag, title, xaxis, yaxis ){ //creates the barchart
       };
       Plotly.newPlot(tag, data,layout)
 }
+/**
+ * gets a data from the storage
+ * if no data is found an error is raised
+ * @param {string} source - the storage field from which the data is harvested
+ */
 async function getHistory(source){
 	const storage = await browser.storage.local.get();
     var data
@@ -81,15 +93,19 @@ async function getHistory(source){
 	}
     else if(source!="credentials"){
         loadDefault()
-        throw new Error("upsi")
+        throw new Error("SourceError")
     }
     else if(source=="credentials"){
         console.log("Found No Crendentials")
-        throw new Error("upsi")
+        throw new Error("SourceError")
     }
 }
-
-function getDomian(Url){ //returns Domain of given Url
+/**
+ * retuns the Domian of a given Url
+ * 
+ * @param {string} Url the url
+ */
+function getDomian(Url){ 
     Url = Url.slice(Url.indexOf("/")+1)
     Url = Url.slice(Url.indexOf("/")+1)
     var last =  Url.indexOf("/")
@@ -99,8 +115,13 @@ function getDomian(Url){ //returns Domain of given Url
     return Url
 
 }
+/**
+ * gets and prepares the source data for the barchart of history like pages
+ *
+ * @param {string} source - identifies the storage field from which the data orignates
+ */
 
-async function getSourceData(source){ //creates the source data for the barchart of history like pages
+async function getSourceData(source){ 
     let history = await getHistory(source)
     let quantity = [] 
     var host = [] // host contains all hostnames without duplicates
@@ -132,12 +153,19 @@ async function getSourceData(source){ //creates the source data for the barchart
     }  
     return quantity 
 }
-
+/**
+ * loads the Default page which is loaded if no data is found
+ *
+ */
 async function loadDefault (){
     window.location.replace("default.html")
 }
-
-async function getDataForGoogle(source){//return source data for table of the google of history like pages
+/**
+ * prepares and loads Data for the Googletable
+ *
+ * @param {string} source 
+ */
+async function getDataForGoogle(source){
     let history = await getHistory(source);
     function Is_Google(element,index,array){//returns ture if element.url matches a valid url of google.com
         try  {
@@ -163,14 +191,13 @@ async function getDataForGoogle(source){//return source data for table of the go
         document.getElementById("Google").hidden = false
     }
     return history
-
 }
 async function createList(source){//create table with google calls.
     let sourceData  =[]
     try {
         sourceData = await getDataForGoogle(source)
     } catch (error) {
-        if(error.message = "upsi"){
+        if(error.message = "SourceError"){
             return
         }
         else{
@@ -191,7 +218,13 @@ async function createList(source){//create table with google calls.
 
     }
 }
-function removeDuplicates(array, equal){//removes Duplicates from given Array, where array is array and equal is function which returns true if two elements are a duplicate
+/**
+ * removes all duplicates from an array
+ *
+ * @param {array} array - the array from which duplicates are removed
+ * @param {Function} equal - a function which returns true if two elements are considert duplicate has to be of correct form to be using in array.findLastIndex()
+ */
+function removeDuplicates(array, equal){
     try {
     var result = []
     array.forEach(helper)
@@ -208,10 +241,16 @@ function removeDuplicates(array, equal){//removes Duplicates from given Array, w
     }
     
 }
-
+/**
+ * 
+ * extends an HTML table with  content 
+ *
+ * @param {string} name - the name of the html table which will be extended
+ * @param {array} array - the array from which the content for the table originate
+ * @param {function} content - a function which extracts the correct entries from the the array
+ * @param {number} columns - the number of columns table has
+ */
 function createTable(name, array, content,columns ){ //creates an HTML Table 
-    //console.log("====")
-    //console.log(array)
     array.forEach(appendEntry)
     function appendEntry(element, index,array){
         var Table = document.getElementById(name);

@@ -1,14 +1,16 @@
 var param = document.getElementById("history").getAttribute("parameter");
+/**
+ * Inserts content into historypage
+ */
 async function Diag( ){
     var Source=[]
     try {
         Source =  await getSourceData(param)
     } catch (error) {
-        if(error.message = "upsi"){
+        if(error.message = "SourceError"){
             return
         }
     }
-    //console.log(Source)
     Source.sort( (a,b) => b.quantity - a.quantity )
     var xaxis =[]
     var yaxis = []
